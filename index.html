@@ -6,13 +6,29 @@
     <title>Tết Hà Nội - Nét Đẹp Văn Hóa Ngàn Năm</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("show");
+      });
+    });
+  </script>
   <body>
     <!-- Header -->
     <header>
       <div class="header-top">🏮 CHÚC MỪNG NĂM MỚI - VẠN SỰ NHƯ Ý 🏮</div>
-      <nav>
+
+      <nav class="navbar">
         <a href="index.html" class="logo">Tết Hà Nội</a>
-        <ul class="nav-links">
+
+        <!-- nút menu mobile -->
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
           <li><a href="index.html" class="active">Trang chủ</a></li>
           <li><a href="gioi-thieu.html">Giới thiệu</a></li>
           <li><a href="phong-tuc.html">Phong tục</a></li>
