@@ -9,13 +9,18 @@
   <body>
     <header>
       <div class="header-top">🏮 CHÚC MỪNG NĂM MỚI - VẠN SỰ NHƯ Ý 🏮</div>
-      <nav>
+
+      <nav class="navbar">
         <a href="index.html" class="logo">Tết Hà Nội</a>
-        <ul class="nav-links">
-          <li><a href="index.html">Trang chủ</a></li>
+
+        <!-- nút menu mobile -->
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Trang chủ</a></li>
           <li><a href="gioi-thieu.html">Giới thiệu</a></li>
           <li><a href="phong-tuc.html">Phong tục</a></li>
-          <li><a href="am-thuc.html" class="active">Ẩm thực</a></li>
+          <li><a href="am-thuc.html">Ẩm thực</a></li>
           <li><a href="van-hoa.html">Văn hóa</a></li>
           <li><a href="hinh-anh.html">Hình ảnh</a></li>
           <li><a href="cau-chuyen.html">Câu chuyện</a></li>
@@ -204,5 +209,19 @@
         </p>
       </div>
     </footer>
+    <script>
+      const menuBtn = document.querySelector(".menu-toggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("show");
+        });
+      });
+    </script>
   </body>
 </html>

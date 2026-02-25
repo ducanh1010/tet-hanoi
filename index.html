@@ -6,17 +6,7 @@
     <title>Tết Hà Nội - Nét Đẹp Văn Hóa Ngàn Năm</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
-    }
 
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
-        document.getElementById("navLinks").classList.remove("show");
-      });
-    });
-  </script>
   <body>
     <!-- Header -->
     <header>
@@ -271,5 +261,19 @@
         </p>
       </div>
     </footer>
+    <script>
+      const menuBtn = document.querySelector(".menu-toggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("show");
+        });
+      });
+    </script>
   </body>
 </html>
